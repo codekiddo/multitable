@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <title>Multiplication Table</title>
 
+  <link rel="stylesheet" type="text/css" href="css/main.css">
 </head>
 <body>
 
@@ -11,7 +12,7 @@
     <input type="number" ng-model="numberLimit" placeholder="Enter a number..." />
     <table>
       <tr ng-repeat="numberA in numbers">
-        <td ng-repeat="numberB in numbers" ng-bind="compute(numberA, numberB)"></td>
+        <td ng-repeat="numberB in numbers" ng-mouseover="setActiveFactors(numberA, numberB)" ng-mouseleave="clearActiveFactors()" ng-class="{hover: matchesFactor(numberA, numberB)}" ng-bind="compute(numberA, numberB)"></td>
       </tr>
     </table>
   </div>
